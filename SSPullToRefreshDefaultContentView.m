@@ -49,20 +49,20 @@
 - (void)setState:(SSPullToRefreshViewState)state withPullToRefreshView:(SSPullToRefreshView *)view {	
 	switch (state) {
 		case SSPullToRefreshViewStateReady: {
-			_statusLabel.text = @"Release to refresh...";
+			_statusLabel.text = @"释放刷新...";
 			[_activityIndicatorView stopAnimating];
 			break;
 		}
 			
 		case SSPullToRefreshViewStateNormal: {
-			_statusLabel.text = @"Pull down to refresh...";
+			_statusLabel.text = @"下拉刷新...";
 			[_activityIndicatorView stopAnimating];
 			break;
 		}
 		
 		case SSPullToRefreshViewStateLoading:
 		case SSPullToRefreshViewStateClosing: {
-			_statusLabel.text = @"Loading...";
+			_statusLabel.text = @"载入中...";
 			[_activityIndicatorView startAnimating];
 			break;
 		}
@@ -78,7 +78,7 @@
 		dateFormatter.dateStyle = NSDateFormatterLongStyle;
 		
 	});
-	_lastUpdatedAtLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
+	_lastUpdatedAtLabel.text = [NSString stringWithFormat:@"最近更新: %@", [dateFormatter stringFromDate:date]];
 }
 
 @end
